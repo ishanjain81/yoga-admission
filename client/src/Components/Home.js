@@ -64,6 +64,7 @@ function Home() {
         fetch("/payment", requestOptions)
         .then(response => response.json())
         .then(data => {
+            toast.success(data.message);
             console.log(data);
         });
         
@@ -130,6 +131,7 @@ function Home() {
             <TextField disabled id="outlined-disabled" label="Amount (Rs.)" defaultValue={500} margin='normal' required/>
         </div>
         <div><Button variant="contained" onClick={handlePayment}>Make Payment</Button></div>
+        <div><ToastContainer/></div>
     </div>
   )
 }
