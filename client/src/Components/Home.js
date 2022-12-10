@@ -17,18 +17,22 @@ function Home() {
     const [age,setAge] = useState('');
     const [error,setError] = useState('');
 
+    // set timing slot
     const handleSlotChange = (event) => {
         setSlot(event.target.value);
     };
 
+    // set month
     const handleMonthChange = (event) => {
         setMonth(event.target.value);
     };
 
+    // handle age
     const handleAgeChange = (event) => {
         setAge(event.target.value);
     };
 
+    // handle payment
     const handlePayment = () => {
         if(firstName === '' || lastName === '' || slot === '' || month === ''
             || age === ''
@@ -67,34 +71,42 @@ function Home() {
             toast.success(data.message);
             console.log(data);
         });
-        
+
+        setSlot('');
+        setAge('');
+        setMonth('');
+        setFirstName('');
+        setLastName('');
     }
 
   return (
     <div className="home-page">
+        <div className="container">
+        <h1 className="heading">Yoda Admission Form</h1>
         <div style={{display: 'flex', justifyContent: 'center'}}>
         {
             error !== ''?<Alert severity="error" sx={{m: 1, width: 300}}>{error}</Alert>: <></>
         }
         </div>
         <div>
-            <TextField id="outlined-error-helper-text" label="First Name" margin='normal' required value={firstName} onChange={(e)=>setFirstName(e.target.value)}/>
+            <TextField className="input" id="outlined-error-helper-text" label="First Name" margin='normal' required value={firstName} onChange={(e)=>setFirstName(e.target.value)}/>
         </div>
         <div>
-            <TextField id="outlined-error-helper-text" label="Last Name" margin='normal' required value={lastName} onChange={(e)=>setLastName(e.target.value)}/>
+            <TextField className="input" id="outlined-error-helper-text" label="Last Name" margin='normal' required value={lastName} onChange={(e)=>setLastName(e.target.value)}/>
         </div>
         <div>
-            <TextField id="outlined-error-helper-text" label="Age" type="number" margin='normal' required value={age} onChange={(e)=>handleAgeChange(e)}/>
+            <TextField className="input" id="outlined-error-helper-text" label="Age" type="number" margin='normal' required value={age} onChange={(e)=>handleAgeChange(e)}/>
         </div>
         <div>
         <FormControl sx={{m: 1, minWidth: 220}}>
-            <InputLabel id="demo-simple-select-label" required>Time Slot</InputLabel>
+            <InputLabel className="input" id="demo-simple-select-label" required>Time Slot</InputLabel>
             <Select
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
                 value={slot}
                 label="Time Slot"
                 onChange={handleSlotChange}
+                className="input"
             >
                 <MenuItem value={"6-7 AM"}>6-7 AM</MenuItem>
                 <MenuItem value={"7-8 AM"}>7-8 AM</MenuItem>
@@ -105,13 +117,14 @@ function Home() {
         </div>
         <div>
         <FormControl sx={{m: 1, minWidth: 220}}>
-            <InputLabel id="demo-simple-select-label" required>Month</InputLabel>
+            <InputLabel className="input" id="demo-simple-select-label" required>Month</InputLabel>
             <Select
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
                 value={month}
                 label="Time Slot"
                 onChange={handleMonthChange}
+                className="input"
             >
                 <MenuItem value={"January"}>January</MenuItem>
                 <MenuItem value={"February"}>February</MenuItem>
@@ -128,10 +141,11 @@ function Home() {
         </FormControl>
         </div>
         <div>
-            <TextField disabled id="outlined-disabled" label="Amount (Rs.)" defaultValue={500} margin='normal' required/>
+            <TextField className="input" disabled id="outlined-disabled" label="Amount (Rs.)" defaultValue={500} margin='normal' required/>
         </div>
         <div><Button variant="contained" onClick={handlePayment}>Make Payment</Button></div>
         <div><ToastContainer/></div>
+        </div>
     </div>
   )
 }

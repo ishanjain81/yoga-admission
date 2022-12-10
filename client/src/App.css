@@ -41,8 +41,24 @@
 }
 
 .home-page{
-  border: 1px solid black;
+  /* border: 1px solid black; */
   text-align: center;
-  /* display: flex;
-  justify-content: center; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('https://yogashakti.yoga/wp-content/uploads/2019/02/yoga-background.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.container{
+  border: 2px solid black;
+  padding: 20px;
+  background-color: rgb(250, 250, 242);
+  width: fit-content;
+}
+
+.input{
+  background-color: white;
 }
