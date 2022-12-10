@@ -4,7 +4,7 @@ const bodyParser = require("body-parser");
 const PORT = 8000;
 
 const app = express();
-const db = require('./config/mongoose');
+const my = require('./config/mysql');
 
 // setting express body-parser
 app.use(bodyParser.urlencoded({ extended: false }));

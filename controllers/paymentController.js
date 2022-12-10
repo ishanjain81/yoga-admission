@@ -1,8 +1,10 @@
-const Customer = require('../models/customer');
+const con = require('../config/mysql');
 
 module.exports.CompletePayment = function(req,res){
-    Customer.create(req.body,function(err,customer){
-        if(err){
+    let sql = `INSERT INTO customers (firstName, lastName,age,timeSlot,month,amount) VALUES 
+                ("${req.body.firstName}"," ${req.body.lastName}", ${req.body.age}, "${req.body.timeSlot}", "${req.body.month}", ${req.body.amount})`;
+    con.query(sql, function (err, result) {
+        if (err){
             console.log(err);
             return res.status(200).json({
                 message: "Internal Server Error!"
