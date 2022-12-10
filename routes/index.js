@@ -5,6 +5,6 @@ const paymentController = require('../controllers/paymentController.js');
 console.log('Router Loaded');
 
 // route for checking of the API
-router.get("/payment", paymentController.CompletePayment);
+router.post("/payment", paymentController.CompletePayment);
 
 module.exports = router;
