@@ -137,6 +137,7 @@ function Home() {
                 <MenuItem value={"September"}>September</MenuItem>
                 <MenuItem value={"October"}>October</MenuItem>
                 <MenuItem value={"November"}>November</MenuItem>
+                <MenuItem value={"December"}>December</MenuItem>
             </Select>
         </FormControl>
         </div>
