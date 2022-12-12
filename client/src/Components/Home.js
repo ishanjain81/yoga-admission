@@ -72,6 +72,8 @@ function Home() {
             console.log(data);
         });
 
+        toast.success("Payment Done succesfully");
+
         setSlot('');
         setAge('');
         setMonth('');
