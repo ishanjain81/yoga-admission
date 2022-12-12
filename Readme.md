@@ -7,8 +7,7 @@
 - Store the data in a Mysql Table
 - Processing the response and convert it into JSON Format
 - Show the response in UI
-- Agent can pick any message and reply to it
-- API for sending the message to the server
+- We will get the notification of the payment status
 
 ## See Live Demo
 
@@ -22,9 +21,9 @@
 ## Screenshots
 <p align="center">
   <p>Home Page</p>
-  <img width="100%" height="110%" src="./images/ER-Diagram.JPG">
-  <p>ER Diagram</p>
   <img width="100%" height="110%" src="./images/HomePage.JPG">
+  <p>ER Diagram</p>
+  <img width="100%" height="110%" src="./images/ER-Diagram.JPG">
 </p>
 
 ## Technologies Stack:
